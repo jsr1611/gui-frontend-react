@@ -1,0 +1,63 @@
+/* Canvas.css */
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.main-section {
+  display: flex;
+  flex: 1;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.right-panel {
+  width: 200px;
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center buttons vertically */
+  gap: 10px; /* Add space between buttons */
+  height: 100vh; /* Make sure the sidebar takes full height */
+}
+
+.right-panel button, select {
+  background-color: #495057;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  appearance: none; /* Remove default dropdown arrow */
+  -webkit-appearance: none; /* Remove dropdown arrow in WebKit browsers */
+  -moz-appearance: none; /* Remove dropdown arrow in Firefox */
+  text-align: center;
+}
+
+.right-panel button:hover, select:hover {
+  background-color: #6c757d;
+}
+
+.right-panel option {
+  font-size: 18px; /* Increase option font size */
+  padding: 10px; /* Add padding to options */
+}

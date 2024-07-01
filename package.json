@@ -1,13 +1,17 @@
 {
-  "name": "gui-frontend01",
+  "name": "gui-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "i18next": "^23.11.5",
+    "konva": "^9.3.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^14.1.2",
+    "react-konva": "^18.2.10",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },

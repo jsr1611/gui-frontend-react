@@ -1,0 +1,9 @@
+/* BoundingBox.css */
+
+.bounding-box-container {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto; /* Center the component horizontally */
+    background-color: #fff; /* Optional background color */
+  }
+  
