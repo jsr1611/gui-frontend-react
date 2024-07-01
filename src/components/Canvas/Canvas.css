@@ -17,6 +17,7 @@
 .main-section {
   display: flex;
   flex: 1;
+  flex-direction: row; /* Sidebar on the right side by default */
 }
 
 .main-content {
@@ -28,15 +29,17 @@
 }
 
 .right-panel {
-  width: 200px;
+  width: 200px; /* Fixed width for larger screens */
   background-color: #343a40;
   color: white;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center buttons vertically */
-  gap: 10px; /* Add space between buttons */
-  height: 100vh; /* Make sure the sidebar takes full height */
+  justify-content: center;
+  gap: 10px; /* Add space between items */
+  height: auto; /* Adjust height for content */
+  margin: 0; /* Remove margin */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .right-panel button, select {
@@ -51,6 +54,7 @@
   -webkit-appearance: none; /* Remove dropdown arrow in WebKit browsers */
   -moz-appearance: none; /* Remove dropdown arrow in Firefox */
   text-align: center;
+  width: 100%; /* Ensure buttons and select fill the width */
 }
 
 .right-panel button:hover, select:hover {
@@ -60,4 +64,17 @@
 .right-panel option {
   font-size: 18px; /* Increase option font size */
   padding: 10px; /* Add padding to options */
+}
+
+/* Move the right panel to the bottom for screen widths < 940px */
+@media (max-width: 939px) {
+  .main-section {
+    flex-direction: column-reverse; /* Move the right panel to the bottom */
+  }
+
+  .right-panel {
+    width: 100%; /* Full width for mobile view */
+    position: relative; /* Reset to relative positioning for mobile view */
+    margin-top: 10px; /* Add margin to avoid overlap with the main content */
+  }
 }

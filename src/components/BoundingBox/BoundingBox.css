@@ -1,9 +1,15 @@
 /* BoundingBox.css */
-
 .bounding-box-container {
-    width: 800px;
-    height: 600px;
-    margin: 0 auto; /* Center the component horizontally */
-    background-color: #fff; /* Optional background color */
+  width: 100%;
+  max-width: 800px; /* Limit maximum width */
+  height: auto; /* Auto height */
+  margin: 0 auto; /* Center horizontally */
+  background-color: #fff;
+}
+
+@media (max-width: 800px) {
+  .bounding-box-container {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Adjust height based on content */
   }
-  
+}

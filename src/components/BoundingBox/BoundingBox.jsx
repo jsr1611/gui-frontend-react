@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { Stage, Layer, Circle, Line, Image as KonvaImage } from "react-konva";
 
 const BoundingBox = forwardRef((_, ref) => {
@@ -19,7 +25,7 @@ const BoundingBox = forwardRef((_, ref) => {
       } else {
         return [];
       }
-    }
+    },
   }));
 
   // Function to handle mouse clicks
@@ -32,7 +38,12 @@ const BoundingBox = forwardRef((_, ref) => {
     const offsetX = (800 - imageWidth) / 2;
     const offsetY = (600 - imageHeight) / 2;
 
-    if (x >= offsetX && x <= offsetX + imageWidth && y >= offsetY && y <= offsetY + imageHeight) {
+    if (
+      x >= offsetX &&
+      x <= offsetX + imageWidth &&
+      y >= offsetY &&
+      y <= offsetY + imageHeight
+    ) {
       // Add the new dot to the array
       setDots([...dots, { x, y }]);
       console.log("coordinates:", x, y);
@@ -90,16 +101,15 @@ const BoundingBox = forwardRef((_, ref) => {
   }, []);
 
   return (
-    <div
-      className="App"
-      style={{ width: "800px", height: "600px" }}
-    >
-      <Stage
-        width={800}
-        height={600}
-        onClick={handleClick}
+    <div className="bounding-box-container">
+      <Stage 
+        width={imageWidth} 
+        height={imageHeight} 
+        onClick={handleClick} 
+        onTouchStart={handleClick}  // Add touch event listener
+        onTouchMove={handleClick}   // Add touch event listener for moving
         ref={stageRef}
-      >
+        >
         <Layer>
           {image && (
             <KonvaImage

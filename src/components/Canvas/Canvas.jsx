@@ -2,10 +2,9 @@
 
 import React, { useRef, useState } from "react";
 import BoundingBox from "../BoundingBox/BoundingBox";
-import "./Canvas.css"; // Import the CSS for the layout styling
+import "./Canvas.css";
 
 export default function Canvas() {
-  // const [resetAnnotations, setResetAnnotations] = useState(false);
   const boundingBoxRef = useRef(null);
   const [selectedOption, setSelectedOption] = useState("");
 
