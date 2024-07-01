@@ -50,6 +50,18 @@ const BoundingBox = forwardRef((_, ref) => {
     }
   };
 
+   // Function to handle touch events and prevent default behavior
+   const handleTouchStart = (e) => {
+    e.evt.preventDefault(); // Prevent the default behavior of the touch event
+    handleClick(e);
+  };
+
+  const handleTouchMove = (e) => {
+    e.evt.preventDefault(); // Prevent the default behavior of the touch event
+    handleClick(e);
+  };
+
+
   // Draw the bounding box if there are 4 dots
   const lines =
     dots.length === 4
@@ -106,8 +118,8 @@ const BoundingBox = forwardRef((_, ref) => {
         width={imageWidth} 
         height={imageHeight} 
         onClick={handleClick} 
-        onTouchStart={handleClick}  // Add touch event listener
-        onTouchMove={handleClick}   // Add touch event listener for moving
+        onTouchStart={handleTouchStart}  // Add touch event listener
+        onTouchMove={handleTouchMove}   // Add touch event listener for moving
         ref={stageRef}
         >
         <Layer>
